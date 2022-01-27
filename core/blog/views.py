@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView,RedirectView
-from django.views.generic import ListView,DetailView,FormView,CreateView
+from django.views.generic import ListView,DetailView,FormView,CreateView,UpdateView,DeleteView
 from .models import Post
 from django.shortcuts import get_object_or_404
 from .forms import PostForm
@@ -77,3 +77,12 @@ class PostCreateView(CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+class PostEditView(UpdateView):
+    model = Post
+    form_class = PostForm
+    success_url = '/blog/post/'
+
+class PostDeleteView(DeleteView):
+    model= Post
+    success_url = "/blog/post/"
