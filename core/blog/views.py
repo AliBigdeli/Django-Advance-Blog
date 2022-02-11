@@ -1,10 +1,12 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView,RedirectView
 from django.views.generic import ListView,DetailView,FormView,CreateView,UpdateView,DeleteView
+from django.http import HttpResponse
 from .models import Post
 from django.shortcuts import get_object_or_404
 from .forms import PostForm
 from django.contrib.auth.mixins import LoginRequiredMixin,PermissionRequiredMixin
+
 # Create your views here.
 
 # Function Base View show a template
