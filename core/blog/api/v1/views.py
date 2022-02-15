@@ -1,7 +1,6 @@
 from rest_framework.decorators import api_view,permission_classes
 from rest_framework.permissions import IsAuthenticated,IsAuthenticatedOrReadOnly,IsAdminUser
 from rest_framework.response import Response
-
 from .serializers import PostSerializer
 from ...models import Post
 from rest_framework import status
@@ -23,7 +22,7 @@ def postList(request):
         
 
 @api_view(["GET","PUT","DELETE"])
-@permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticatedOrReadOnly])
 def postDetail(request,id):  
     post = get_object_or_404(Post,pk=id,status=True)
     if request.method == "GET":
