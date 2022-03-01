@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'accounts',
     'blog',
     'rest_framework',
+    'rest_framework.authtoken',
     'django_filters',
-    'drf_yasg'
+    'drf_yasg',
+    
     
 ]
 
@@ -143,4 +145,10 @@ AUTH_USER_MODEL = 'accounts.User'
 
 # restframework settings
 
-# REST_FRAMEWORK = { }
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+} 
