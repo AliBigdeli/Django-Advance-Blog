@@ -11,6 +11,7 @@ from .permissions import IsOwnerOrReadOnly
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter,OrderingFilter
 from .paginations import DefaultPagination
+from .filters import PostFilters
 # Example for Function Based View
 """
 from rest_framework.decorators import api_view,permission_classes
@@ -116,7 +117,8 @@ class PostModelViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
     queryset = Post.objects.filter(status=True)
     filter_backends = [DjangoFilterBackend,SearchFilter,OrderingFilter]
-    filterset_fields = ['category', 'author','status']
+    # filterset_fields = {'category':["exact","in"], 'author':["exact"],'status':["exact"]}
+    filterset_class = PostFilters
     search_fields = ['title', 'content']
     ordering_fields = ['published_date']
     pagination_class = DefaultPagination
