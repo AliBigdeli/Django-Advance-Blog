@@ -9,5 +9,6 @@ djangorestframework
 markdown       
 django-filter  
 drf-yasg[validation]
+djangorestframework-simplejwt
 
 # deployment module
