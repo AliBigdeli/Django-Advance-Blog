@@ -3,10 +3,12 @@ from django.dispatch import receiver
 from django.db import models
 from .users import User
 
+
 class Profile(models.Model):
     """
     Profile class for each user which is being created to hold the information
     """
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=250)
     last_name = models.CharField(max_length=250)
