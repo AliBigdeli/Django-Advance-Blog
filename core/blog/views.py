@@ -12,7 +12,10 @@ from django.http import HttpResponse
 from .models import Post
 from django.shortcuts import get_object_or_404
 from .forms import PostForm
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.mixins import (
+    LoginRequiredMixin,
+    PermissionRequiredMixin,
+)
 
 # Create your views here.
 
@@ -68,7 +71,6 @@ class PostListView(PermissionRequiredMixin, LoginRequiredMixin, ListView):
     context_object_name = "posts"
     # paginate_by = 2
     ordering = "-id"
-
     # def get_queryset(self):
     #     posts = Post.objects.filter(status=True)
     #     return posts

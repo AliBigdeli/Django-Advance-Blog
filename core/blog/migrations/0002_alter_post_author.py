@@ -16,7 +16,8 @@ class Migration(migrations.Migration):
             model_name="post",
             name="author",
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to="accounts.profile"
+                on_delete=django.db.models.deletion.CASCADE,
+                to="accounts.profile",
             ),
         ),
     ]
