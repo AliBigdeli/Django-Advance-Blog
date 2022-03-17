@@ -64,7 +64,7 @@ class RedirectToMaktab(RedirectView):
         return super().get_redirect_url(*args, **kwargs)
 
 
-class PostListView( ListView):
+class PostListView(ListView):
     permission_required = "blog.view_post"
     queryset = Post.objects.all()
     # model = Post
@@ -76,7 +76,7 @@ class PostListView( ListView):
     #     return posts
 
 
-class PostDetailView( DetailView):
+class PostDetailView(LoginRequiredMixin,DetailView):
     model = Post
 
 
