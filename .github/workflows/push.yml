@@ -1,5 +1,8 @@
 name: docker-compose-actions-workflow
-on: push
+on:
+  push:
+    branches:
+      - 'production'
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -7,5 +10,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build the stack
         run: docker-compose up -d
-      - name: Test
+      - name: Running Test
         run: docker exec backend sh -c "python manage.py flake8 && pytest ."
