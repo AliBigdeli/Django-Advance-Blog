@@ -48,7 +48,7 @@ class TestPostApi:
         user = common_user
         api_client.force_authenticate(user=user)
         response = api_client.post(url, data)
-        assert response.status_code == 201
+        assert response.status_code == 202
 
     def test_create_post_invalid_data_response_400_status(
         self, api_client, common_user
