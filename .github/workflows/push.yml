@@ -11,4 +11,4 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
       - name: Running Test
-        run: docker exec backend sh -c "python manage.py flake8 && pytest ."
+        run: docker exec backend sh -c "flake8 && pytest ."
