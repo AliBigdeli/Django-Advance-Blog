@@ -14,5 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Test Output
-      run: false
+    - name: Setup Docker-compose
+      run: docker-compose up -d
+    - name: Run tests
+      run: docker-compose exec backend sh -c "pytest && flake8"
