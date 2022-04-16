@@ -2,9 +2,9 @@ name: Django Project Test
 
 on:
   push:
-    branches: [ main ]
+    branches: [ production ]
   pull_request:
-    branches: [ main ]
+    branches: [ production ]
 
 jobs:
 
