@@ -24,3 +24,8 @@ flake8
 pytest
 pytest-django
 Faker
+
+# background proccess and cache
+celery
+redis
+django-redis
