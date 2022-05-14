@@ -166,7 +166,7 @@ REST_FRAMEWORK = {
 }
 
 # email configuration
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 # EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 # EMAIL_USE_TLS = False
 # EMAIL_HOST = "smtp4dev"
