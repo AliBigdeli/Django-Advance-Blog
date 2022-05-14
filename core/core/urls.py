@@ -40,7 +40,7 @@ schema_view = get_schema_view(
 
 
 def indexView(request):
-    return HttpResponse("<h1>Index Page</h1>")
+    return HttpResponse("<h1>Django Final Test</h1>")
 
 
 urlpatterns = [
