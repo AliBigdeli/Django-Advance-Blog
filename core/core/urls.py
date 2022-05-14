@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.http import HttpResponse
+
 
 # from rest_framework.documentation import include_docs_urls
 from rest_framework import permissions
@@ -36,10 +38,15 @@ schema_view = get_schema_view(
     permission_classes=[permissions.AllowAny],
 )
 
+def indexView(request):
+    return HttpResponse('<h1>Index Page</h1>')
+
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
     path("accounts/", include("accounts.urls")),
+    path("",indexView,name='index'),
     path("blog/", include("blog.urls")),
     # path('api-docs/',include_docs_urls(title='api sample')),
     path(
